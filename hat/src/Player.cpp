@@ -1,8 +1,8 @@
 
 #include "Player.h"
 #include <stdio.h>
-
-
+#include <stack>
+#include <string>
 
 Player::Player()
 {
@@ -65,73 +65,24 @@ void Player::SetPlayerX(bool Plus)
 	if (Plus) // RIGHT "D"
 	{
 
-		int i = 0;
-		for (; i < snake.size(); i++)
-		{
-			if (snake[i].Vec != Dir::left)
-			{
-				if (i == 0)
-				{
-					snake[0].x++;
-					snake[i].Vec = Dir::right;
 
-				}
-				else
-				{
-					switch (snake[i].Vec)
-					{
-					case Dir::down:
-						snake[i].y = snake[i].y + 1; break;
-					case Dir::up:
-						snake[i].y = snake[i].y - 1; break;
-						//case Dir::left:
-							//snake[i].x = snake[i].x - 1; break;
-					case Dir::right:
-						snake[i].x = snake[i].x + 1; break;
-					}
-					if (snake[i].y == snake[i - 1].y)
-					{
-						snake[i].Vec = Dir::right;
-					}
-				}
-			}
-		}
+		if (snake[0].Vec == Dir::left) return;
+
+		snake[0].x++;
+		snake[0].Vec = Dir::right;
+
+		Move();
+
 	}
 	else // LEFT "A"
 	{
+		if (snake[0].Vec == Dir::right) return;
+
+		snake[0].x--;
+		snake[0].Vec = Dir::left;
+
+		Move();
 		
-		int i = 0;
-		for (; i < snake.size(); i++)
-		{
-			if (snake[i].Vec != Dir::right)
-			{
-
-
-				if (i == 0)
-				{
-					snake[0].x--;
-					snake[i].Vec = Dir::left;
-				}
-				else
-				{
-					switch (snake[i].Vec)
-					{
-						case Dir::down:
-							snake[i].y = snake[i].y + 1; break;
-						case Dir::up:
-							snake[i].y = snake[i].y - 1; break;
-						case Dir::left:
-							snake[i].x = snake[i].x - 1; break;
-							//case Dir::right:
-								//snake[i].x = snake[i].x + 1; break;
-					}
-					if (snake[i].y == snake[i - 1].y)
-					{
-						snake[i].Vec = Dir::left;
-					}
-				}
-			}
-		}
 	}
 
 
@@ -141,77 +92,21 @@ void Player::SetPlayerY(bool Plus)
 {
 	if (Plus) // DOWN "S"
 	{
-		
-		int i = 0;
-		for (; i < snake.size(); i++)
-		{
-			if (snake[i].Vec != Dir::up)
-			{
+		if (snake[0].Vec == Dir::up) return;
 
+		snake[0].y++;
+		snake[0].Vec = Dir::down;
 
-				if (i == 0)
-				{
-					snake[0].y++;
-					snake[i].Vec = Dir::down;
-				}
-				else
-				{
-					switch (snake[i].Vec)
-					{
-					case Dir::down:
-						snake[i].y = snake[i].y + 1; break;
-						//case Dir::up:
-							//snake[i].y = snake[i].y - 1; break;
-					case Dir::left:
-						snake[i].x = snake[i].x - 1; break;
-					case Dir::right:
-						snake[i].x = snake[i].x + 1; break;
-					}
-					if (snake[i].x == snake[i - 1].x)
-					{
-						snake[i].Vec = Dir::down;
-					}
-				}
-			}
-		}
-		
+		Move();
 	}
 	else // UP "W"
 	{
-		
-		int i = 0;
-		for (; i < snake.size(); i++)
-		{
-			if (snake[i].Vec != Dir::down)
-			{
+		if (snake[0].Vec == Dir::down) return;
 
+		snake[0].y--;
+		snake[0].Vec = Dir::up;
 
-				if (i == 0)
-				{
-					snake[0].y--;
-					snake[i].Vec = Dir::up;
-				}
-				else
-				{
-					switch (snake[i].Vec)
-					{
-						//case Dir::down:
-							//snake[i].y = snake[i].y + 1; break;
-					case Dir::up:
-						snake[i].y = snake[i].y - 1; break;
-					case Dir::left:
-						snake[i].x = snake[i].x - 1; break;
-					case Dir::right:
-						snake[i].x = snake[i].x + 1; break;
-					}
-					if (snake[i].x == snake[i - 1].x)
-					{
-						snake[i].Vec = Dir::up;
-					}
-				}
-			}
-		}
-		
+		Move();
 	}
 }
 
@@ -220,5 +115,37 @@ int Player::ReturnLenght()
 	return snake.size();
 }
 
+//std::pair<float, float> Player::GetHeadPostion()
+//{
+//	return { snake[0].x, snake[0].y };
+//}
 
+void Player::Move()
+{
+	std::stack<Dir> changes;
+	changes.push(Dir::null);
+	for (size_t i = 1; i < snake.size(); i++)
+	{
+		if(snake[i].Vec != snake[i - 1].Vec)
+			changes.push(snake[i - 1].Vec);
+		else
+			changes.push(Dir::null);
+	}
+	for (size_t i = snake.size(); i > 1; i--)
+	{
+		if (changes.top() != Dir::null)
+			snake[i-1].Vec = changes.top();
+		changes.pop();
+	}
 
+	for (size_t i = 1; i < snake.size(); i++)
+	{
+		switch (snake[i].Vec)
+		{
+		case Dir::down:  snake[i].y++; break;
+		case Dir::left:  snake[i].x--; break;
+		case Dir::right: snake[i].x++; break;
+		case Dir::up:    snake[i].y--; break;
+		}
+	}
+}

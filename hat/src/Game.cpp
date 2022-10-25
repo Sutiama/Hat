@@ -1,7 +1,7 @@
 
 #include "Game.h"
 #include <stdio.h>
-
+#include <iostream>
 
 Player player;
 
@@ -16,16 +16,21 @@ void GameHad::update()
 		m_X = i % a;
 		m_Y = i / a;
 
+		//std::pair<float, float> pa = m_Player.GetHeadPostion();
 
 		if (i < a || i % a == 0 || i % a == a-1 || i > a*a-a)
 		{
 			m_Map += " *";
 		}
+		/*else if(pa.first == m_X && pa.second == m_Y)
+		{
+			m_Map += " @";
+		}*/
 		else if(ShouldDrawPlayer())
 		{
 			m_Map += " #";
 		}
-		else
+		else 
 		{
 			m_Map += "  ";
 		}
@@ -47,7 +52,7 @@ void GameHad::update()
 
 bool GameHad::ShouldDrawPlayer()
 {
-	if (IsOnPosition())
+	if (IsOnPosition())	
 	{
 		return true;
 	}
@@ -79,8 +84,6 @@ void GameHad::reactToKey(char key)
 			m_Player.SetPlayerX(1);
 		break;
 	}
-
-	
 }
 
 bool GameHad::IsOnPosition()

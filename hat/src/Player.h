@@ -4,10 +4,11 @@
 
 enum Dir
 {
+	null,
 	left,
 	right,
 	up,
-	down,
+	down
 };
 
 struct SnakePointData
@@ -32,11 +33,15 @@ class Player
 		int increaseLenght();
 		bool IsOnPosition();
 		Player();
+		void Move();
 
 		std::vector<std::pair<float,float>> GetPositions();
 
 		void SetPlayerX(bool PlusOrMinus);
 		void SetPlayerY(bool PlusOrMinus);
+		
+		
 
 		int ReturnLenght();
-};
+		std::pair<float, float> GetHeadPostion();
+}
