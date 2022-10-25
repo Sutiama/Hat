@@ -1,19 +1,26 @@
 #pragma once
 
+#include "Player.h"
 #include <string>
 
 class GameHad
 {
 private:
-	std::string map;
-	float Px = 10, Py = 10;
+	std::string m_Map;
+	Player m_Player;
+	
+	float m_X, m_Y;
 
-	bool drawPlayer(float x,float y);
+	bool ShouldDrawPlayer();
 	int move();
 	
 public:
 	void update();
 	void reactToKey(char key);
+	
+	
+	bool IsOnPosition();
 
+	
 
 };

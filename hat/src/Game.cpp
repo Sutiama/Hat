@@ -1,52 +1,98 @@
+
 #include "Game.h"
 #include <stdio.h>
 
 
+Player player;
+
 void GameHad::update()
 {
-	map = "";
+	m_Map = "";
+
 
 	int a = 20;
 	for (int i = 0;i<a*20;i++)
 	{
-		if (i < a || i % a == 0 || i % a == 19 || i > a*a-a)
+		m_X = i % a;
+		m_Y = i / a;
+
+
+		if (i < a || i % a == 0 || i % a == a-1 || i > a*a-a)
 		{
-			map += " *";
+			m_Map += " *";
 		}
-		else if(drawPlayer(i % a, i/a ))
+		else if(ShouldDrawPlayer())
 		{
-			map += " #";
+			m_Map += " #";
 		}
 		else
 		{
-			map += "  ";
+			m_Map += "  ";
 		}
 
 		if (i % a == a-1)
 		{
-			map += "\n";
+			m_Map += "\n";
 		}
+		
+		
+			//printf("%f ", x);
+			//printf("%f \n", y);	
+		
 	}
 
-	printf("%s", map.c_str());
+	printf("%s", m_Map.c_str());
+	
 }
 
-bool GameHad::drawPlayer(float x,float y)
+bool GameHad::ShouldDrawPlayer()
 {
-	
-	if (Px == x && Py == y)
-		return 1;
+	if (IsOnPosition())
+	{
+		return true;
+	}
 	else
-		return 0;
-	
+	{
+		return false;
+	}
 }
 
 void GameHad::reactToKey(char key)
 {
-	if (key == 'w') Py--;
-	if (key == 's') Py++;
-	if (key == 'a') Px--;
-	if (key == 'd') Px++;	
+		//if (key == 'w') Px--;
+		//if (key == 's') Px++;
+		//if (key == 'a') Py--;
+		//if (key == 'd') Py++;
+		
+	switch (key)
+	{
+		case 'w':
+			m_Player.SetPlayerY(0);
+		break;
+		case 's':
+			m_Player.SetPlayerY(1);
+		break;
+		case 'a':
+			m_Player.SetPlayerX(0);
+		break;
+		case 'd':
+			m_Player.SetPlayerX(1);
+		break;
+	}
+
+	
 }
 
-
+bool GameHad::IsOnPosition()
+{
+		
+	for(int i = 0; i < m_Player.GetPositions().size();i++)
+	{
+		if (m_X == m_Player.GetPositions()[i].first && 
+		    m_Y == m_Player.GetPositions()[i].second   )
+		{
+			return true;
+		}
+	}
+	return false;
+}
