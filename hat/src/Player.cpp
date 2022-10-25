@@ -2,7 +2,6 @@
 #include "Player.h"
 #include <stdio.h>
 #include <stack>
-#include <string>
 
 Player::Player()
 {
@@ -115,15 +114,19 @@ int Player::ReturnLenght()
 	return snake.size();
 }
 
-//std::pair<float, float> Player::GetHeadPostion()
-//{
-//	return { snake[0].x, snake[0].y };
-//}
+std::pair<float, float> Player::GetHeadPostion()
+{
+	std::pair<float, float> a;
+	a.first = snake[0].x;
+	a.second = snake[0].y;
+	return a;
+}
 
 void Player::Move()
 {
 	std::stack<Dir> changes;
 	changes.push(Dir::null);
+	
 	for (size_t i = 1; i < snake.size(); i++)
 	{
 		if(snake[i].Vec != snake[i - 1].Vec)

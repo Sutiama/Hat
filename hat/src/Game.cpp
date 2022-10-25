@@ -16,16 +16,16 @@ void GameHad::update()
 		m_X = i % a;
 		m_Y = i / a;
 
-		//std::pair<float, float> pa = m_Player.GetHeadPostion();
+		std::pair<float, float> pa = m_Player.GetHeadPostion();
 
 		if (i < a || i % a == 0 || i % a == a-1 || i > a*a-a)
 		{
 			m_Map += " *";
 		}
-		/*else if(pa.first == m_X && pa.second == m_Y)
+		else if(pa.first == m_X && pa.second == m_Y)
 		{
 			m_Map += " @";
-		}*/
+		}
 		else if(ShouldDrawPlayer())
 		{
 			m_Map += " #";
@@ -41,8 +41,8 @@ void GameHad::update()
 		}
 		
 		
-			//printf("%f ", x);
-			//printf("%f \n", y);	
+			printf("%f ", x);
+			printf("%f \n", y);	
 		
 	}
 
@@ -64,10 +64,10 @@ bool GameHad::ShouldDrawPlayer()
 
 void GameHad::reactToKey(char key)
 {
-		//if (key == 'w') Px--;
-		//if (key == 's') Px++;
-		//if (key == 'a') Py--;
-		//if (key == 'd') Py++;
+		/*if (key == 'w') Px--;
+		if (key == 's') Px++;
+		if (key == 'a') Py--;
+		if (key == 'd') Py++;*/
 		
 	switch (key)
 	{
