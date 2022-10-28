@@ -2,6 +2,10 @@
 #include "Player.h"
 #include <stdio.h>
 #include <stack>
+#include "Game.H"
+
+GameHad g;
+
 
 Player::Player()
 {
@@ -10,8 +14,6 @@ Player::Player()
 	lenght++;
 	increaseLenght();
 	increaseLenght();
-	increaseLenght();
-	
 }
 
 std::vector<std::pair<float, float>> Player::GetPositions()
@@ -63,25 +65,21 @@ void Player::SetPlayerX(bool Plus)
 {
 	if (Plus) // RIGHT "D"
 	{
-
-
 		if (snake[0].Vec == Dir::left) return;
-
-		snake[0].x++;
-		snake[0].Vec = Dir::right;
-
+		if (PlayerCollision(snake[0].x + 1, snake[0].y)) exit(1);
 		Move();
-
+		snake[0].x++;
+	
+		snake[0].Vec = Dir::right;
 	}
 	else // LEFT "A"
 	{
 		if (snake[0].Vec == Dir::right) return;
-
-		snake[0].x--;
-		snake[0].Vec = Dir::left;
-
+		if (PlayerCollision(snake[0].x - 1, snake[0].y)) exit(1);
 		Move();
+		snake[0].x--;
 		
+		snake[0].Vec = Dir::left;
 	}
 
 
@@ -92,20 +90,20 @@ void Player::SetPlayerY(bool Plus)
 	if (Plus) // DOWN "S"
 	{
 		if (snake[0].Vec == Dir::up) return;
-
-		snake[0].y++;
-		snake[0].Vec = Dir::down;
-
+		if (PlayerCollision(snake[0].x, snake[0].y + 1)) exit(1);
 		Move();
+		snake[0].y++;
+		
+		snake[0].Vec = Dir::down;
 	}
 	else // UP "W"
 	{
 		if (snake[0].Vec == Dir::down) return;
-
-		snake[0].y--;
-		snake[0].Vec = Dir::up;
-
+		if (PlayerCollision(snake[0].x, snake[0].y - 1)) exit(1);
 		Move();
+		snake[0].y--;
+		
+		snake[0].Vec = Dir::up;
 	}
 }
 
@@ -114,41 +112,59 @@ int Player::ReturnLenght()
 	return snake.size();
 }
 
-std::pair<float, float> Player::GetHeadPostion()
-{
-	std::pair<float, float> a;
-	a.first = snake[0].x;
-	a.second = snake[0].y;
-	return a;
-}
+
 
 void Player::Move()
 {
-	std::stack<Dir> changes;
-	changes.push(Dir::null);
 	
-	for (size_t i = 1; i < snake.size(); i++)
-	{
-		if(snake[i].Vec != snake[i - 1].Vec)
-			changes.push(snake[i - 1].Vec);
-		else
-			changes.push(Dir::null);
-	}
-	for (size_t i = snake.size(); i > 1; i--)
-	{
-		if (changes.top() != Dir::null)
-			snake[i-1].Vec = changes.top();
-		changes.pop();
-	}
+	float X = snake[1].x, X2;
+	float Y = snake[1].y,Y2;
 
-	for (size_t i = 1; i < snake.size(); i++)
+	snake[1].x = snake[0].x;
+	snake[1].y = snake[0].y;
+	
+	
+	
+	for (size_t i = 2; i < snake.size(); i++)
 	{
-		switch (snake[i].Vec)
+		X2 = snake[i].x;
+		Y2 = snake[i].y;	
+		
+		snake[i].x = X;
+		snake[i].y = Y;
+
+		X = X2;
+		Y = Y2;
+		/*switch (snake[i].Vec)
 		{
-		case Dir::down:  snake[i].y++; break;
-		case Dir::left:  snake[i].x--; break;
-		case Dir::right: snake[i].x++; break;
-		case Dir::up:    snake[i].y--; break;
+			case Dir::down:  snake[i].y++; break;
+			case Dir::left:  snake[i].x--; break;
+			case Dir::right: snake[i].x++; break;
+			case Dir::up:    snake[i].y--; break;
+		}
+
+		snake[1].Vec = snake[0].Vec;
+	
+		*/
+		
+		
+		
+		
+	}
+	
+}
+
+bool Player::PlayerCollision(float x,float y)
+{
+	
+	for (size_t i = 0; i < snake.size(); i++)
+	{
+		if (snake[i].x == x && snake[i].y == y)
+		{
+			return true;
 		}
 	}
+	return false;
 }
+
+

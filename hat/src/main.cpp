@@ -10,11 +10,13 @@
 
 int main()
 {
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	Input i;
 	GameHad g;
 
+	srand(time(NULL));
+	
 	while (1)
 	{
 		system("cls");

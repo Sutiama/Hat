@@ -3,32 +3,36 @@
 #include <stdio.h>
 #include <iostream>
 
-Player player;
+
 
 void GameHad::update()
 {
 	m_Map = "";
 
+	
 
-	int a = 20;
+	a = 20;
 	for (int i = 0;i<a*20;i++)
 	{
 		m_X = i % a;
 		m_Y = i / a;
 
-		std::pair<float, float> pa = m_Player.GetHeadPostion();
+		BorderCollision();
+		CreateFruit();
+		FruitCollision();
+		
 
 		if (i < a || i % a == 0 || i % a == a-1 || i > a*a-a)
 		{
 			m_Map += " *";
 		}
-		else if(pa.first == m_X && pa.second == m_Y)
-		{
-			m_Map += " @";
-		}
 		else if(ShouldDrawPlayer())
 		{
 			m_Map += " #";
+		}
+		else if (Fruit(m_X,m_Y))
+		{
+			m_Map += " +";
 		}
 		else 
 		{
@@ -41,8 +45,7 @@ void GameHad::update()
 		}
 		
 		
-			printf("%f ", x);
-			printf("%f \n", y);	
+		
 		
 	}
 
@@ -67,8 +70,7 @@ void GameHad::reactToKey(char key)
 		/*if (key == 'w') Px--;
 		if (key == 's') Px++;
 		if (key == 'a') Py--;
-		if (key == 'd') Py++;*/
-		
+		if (key == 'd') Py++;*/		
 	switch (key)
 	{
 		case 'w':
@@ -84,6 +86,7 @@ void GameHad::reactToKey(char key)
 			m_Player.SetPlayerX(1);
 		break;
 	}
+	
 }
 
 bool GameHad::IsOnPosition()
@@ -99,3 +102,45 @@ bool GameHad::IsOnPosition()
 	}
 	return false;
 }
+
+void GameHad::BorderCollision()
+{
+
+	if (a < m_Player.GetPositions()[0].first+2 || a < m_Player.GetPositions()[0].second+2 || 0 > m_Player.GetPositions()[0].first - 1 || 0 > m_Player.GetPositions()[0].second - 1)
+	{
+		exit(1);
+	}
+}
+
+bool GameHad::Fruit(float x, float y)
+{
+	if (x == m_FruitX && y == m_FruitY)
+	{
+		return true;
+	}
+	return false;
+}
+
+void GameHad::CreateFruit()
+{
+	if (FruitCount == 0)
+	{
+		m_FruitX = rand() % 19 + 1;
+		m_FruitY = rand() % 19 + 1;
+
+		FruitCount=1;
+	}
+}
+
+
+
+void GameHad::FruitCollision()
+{
+	if (m_FruitX == m_Player.GetPositions()[0].first && m_FruitY == m_Player.GetPositions()[0].second)
+	{
+		m_Player.increaseLenght();
+		FruitCount=0;
+	}
+
+}
+

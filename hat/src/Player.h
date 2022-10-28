@@ -2,6 +2,7 @@
 #pragma once
 #include <vector>
 
+
 enum Dir
 {
 	null,
@@ -18,30 +19,36 @@ struct SnakePointData
 	Dir Vec;
 };
 
-class Player 
+class Player
 {
-	private:
-		int lenght = 2;
-		//bool state;
-		//float rychlost;
-		std::vector<SnakePointData> snake;
-		
-		
-		
+private:
+	int lenght = 2;
+	//bool state;
+	//float rychlost;
+	std::vector<SnakePointData> snake;
 
-	public:
-		int increaseLenght();
-		bool IsOnPosition();
-		Player();
-		void Move();
+	
 
-		std::vector<std::pair<float,float>> GetPositions();
 
-		void SetPlayerX(bool PlusOrMinus);
-		void SetPlayerY(bool PlusOrMinus);
-		
-		
 
-		int ReturnLenght();
-		std::pair<float, float> GetHeadPostion();
-}
+public:
+	int increaseLenght();
+	
+	Player();
+
+
+	std::vector<std::pair<float, float>> GetPositions();
+
+	void SetPlayerX(bool PlusOrMinus);
+	void SetPlayerY(bool PlusOrMinus);
+
+	void Move();
+
+	int ReturnLenght();
+	bool PlayerCollision(float x,float y);
+
+	void FruitCollision();
+
+
+
+};
