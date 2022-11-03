@@ -32,4 +32,6 @@ public:
 	float ReturnFruitX();
 	float ReturnFruitY();
 	void FruitCollision();
+
+	const std::string& MapString();
 };

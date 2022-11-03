@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D5D2767B-9C2D-37D7-97CF-E24226B29CF0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8 -BC:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/.build --check-stamp-file C:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/.build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.24\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeCCompiler.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeRCCompiler.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeSystem.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\cmake_uninstall.cmake.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw3.pc.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw3Config.cmake.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8 -BC:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/.build --check-stamp-file C:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/.build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.24\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeCCompiler.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeRCCompiler.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeSystem.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\cmake_uninstall.cmake.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw3.pc.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw3Config.cmake.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8 -BC:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/.build --check-stamp-file C:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/.build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.24\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeCCompiler.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeRCCompiler.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeSystem.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\cmake_uninstall.cmake.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw3.pc.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw3Config.cmake.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8 -BC:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/.build --check-stamp-file C:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/.build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.24\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeCCompiler.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeRCCompiler.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\3.24.2\CMakeSystem.cmake;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\cmake_uninstall.cmake.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw3.pc.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw3Config.cmake.in;C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\ZERO_CHECK.vcxproj">
+      <Project>{6F5DEAEE-69D4-3FDB-B29E-1D418CF5C9D9}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\examples\boing.vcxproj">
+      <Project>{41452177-FAA1-3824-B673-3A9E942957C8}</Project>
+      <Name>boing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\clipboard.vcxproj">
+      <Project>{FF5FD522-7297-3258-B1E9-DE2FB923EFF6}</Project>
+      <Name>clipboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\cursor.vcxproj">
+      <Project>{8F18A845-6E0E-34D6-8089-DC847FA38489}</Project>
+      <Name>cursor</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\empty.vcxproj">
+      <Project>{6373F510-A473-3D8B-BC68-D7BBD2AD94D3}</Project>
+      <Name>empty</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\events.vcxproj">
+      <Project>{7480F54B-D7B8-36D3-A2A8-31E52BA3DDB3}</Project>
+      <Name>events</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\gamma.vcxproj">
+      <Project>{0F31E072-8A6B-3408-A8D0-91EA2EFC5DFF}</Project>
+      <Name>gamma</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\examples\gears.vcxproj">
+      <Project>{9AC86182-5845-37EC-86F4-E919B5F8EF3F}</Project>
+      <Name>gears</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\src\glfw.vcxproj">
+      <Project>{83C93589-6B59-3AE7-8A9E-717BF8EF720B}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\glfwinfo.vcxproj">
+      <Project>{EF8F8D57-D84F-3ECC-9DAA-28E52C958034}</Project>
+      <Name>glfwinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\examples\heightmap.vcxproj">
+      <Project>{93F995AB-7B38-3E37-8F55-DC6A30F15324}</Project>
+      <Name>heightmap</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\icon.vcxproj">
+      <Project>{299B74E3-B662-331E-809C-FEC669B9879F}</Project>
+      <Name>icon</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\iconify.vcxproj">
+      <Project>{BF26F554-2E3D-3995-BF5F-4F7783C8CE9B}</Project>
+      <Name>iconify</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\inputlag.vcxproj">
+      <Project>{97837EB0-DA7F-3F55-B76C-54BBC32C146C}</Project>
+      <Name>inputlag</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\joysticks.vcxproj">
+      <Project>{0D2994D3-0A9C-3E26-9CA9-BA8BB143BF0F}</Project>
+      <Name>joysticks</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\monitors.vcxproj">
+      <Project>{D1A15098-C4FE-3EC6-BDDC-CD8A1622EB43}</Project>
+      <Name>monitors</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\msaa.vcxproj">
+      <Project>{DC921419-F51C-30D8-B91F-75DB1DB87675}</Project>
+      <Name>msaa</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\examples\offscreen.vcxproj">
+      <Project>{0AF8EEB8-47D8-3A34-B136-5858320B3ADB}</Project>
+      <Name>offscreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\opacity.vcxproj">
+      <Project>{F028AC41-97D0-3BF2-9144-DB9404A3FA0B}</Project>
+      <Name>opacity</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\examples\particles.vcxproj">
+      <Project>{FE162A47-59C3-3C06-8873-4E32514FB8B7}</Project>
+      <Name>particles</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\reopen.vcxproj">
+      <Project>{1604373A-1DF0-319B-B7F0-3AEFD216C26B}</Project>
+      <Name>reopen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\examples\sharing.vcxproj">
+      <Project>{6958326C-AA27-34FC-BC4E-90B9C504C662}</Project>
+      <Name>sharing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\examples\simple.vcxproj">
+      <Project>{D0AB6211-7AD4-3804-8E87-1E47D4A9F05F}</Project>
+      <Name>simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\examples\splitview.vcxproj">
+      <Project>{5A042038-46FF-3461-8398-2CAEC6E12FB4}</Project>
+      <Name>splitview</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\tearing.vcxproj">
+      <Project>{434B992F-9DE7-3D31-AB2F-634E4B4C8356}</Project>
+      <Name>tearing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\threads.vcxproj">
+      <Project>{D0DD2D16-1AC6-3A2C-AB12-9D7B47E37651}</Project>
+      <Name>threads</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\timeout.vcxproj">
+      <Project>{C48B8642-1F93-364B-9CBD-2EB67926DE58}</Project>
+      <Name>timeout</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\title.vcxproj">
+      <Project>{1094BD73-43DD-3171-938B-83433547401D}</Project>
+      <Name>title</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\triangle-vulkan.vcxproj">
+      <Project>{ECE8CE92-31AA-3079-85E9-167ABDB9A88F}</Project>
+      <Name>triangle-vulkan</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\examples\wave.vcxproj">
+      <Project>{FA46F987-D497-383C-BDD4-D32DA7CDB798}</Project>
+      <Name>wave</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\windows.vcxproj">
+      <Project>{30971F3D-E44D-38C9-A955-B50CFD9B18AE}</Project>
+      <Name>windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

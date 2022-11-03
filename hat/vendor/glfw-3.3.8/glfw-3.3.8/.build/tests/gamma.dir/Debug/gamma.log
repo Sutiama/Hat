@@ -1,0 +1,6 @@
+﻿  Building Custom Rule C:/Users/matya/source/repos/Hat/hat/vendor/glfw-3.3.8/glfw-3.3.8/tests/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(247,5): warning MSB8065: Custom build for item "C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\tests\CMakeLists.txt" succeeded, but specified output "c:\users\matya\source\repos\hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\cmakefiles\generate.stamp" has not been created. This may cause incremental build to work incorrectly.
+  gamma.c
+  glad_gl.c
+  Generating Code...
+  gamma.vcxproj -> C:\Users\matya\source\repos\Hat\hat\vendor\glfw-3.3.8\glfw-3.3.8\.build\tests\Debug\gamma.exe

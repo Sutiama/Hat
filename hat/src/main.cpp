@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <crtdbg.h>  
 
+#include "Renderer.h"
 #include <memory> 
 
 int main()
@@ -14,9 +15,10 @@ int main()
 
 	Input i;
 	GameHad g;
-
+	ConsoleRenderer Cr;
 	srand(time(NULL));
 	
+
 	while (1)
 	{
 		system("cls");
@@ -24,8 +26,10 @@ int main()
 		g.reactToKey(i.GetKey());
 		g.update();
 		
-		Sleep(300);
+		Cr.Draw2D(g.MapString());
+		Sleep(500);
 	}
+
 
 	return 0;
 }

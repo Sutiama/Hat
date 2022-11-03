@@ -8,8 +8,8 @@
 void GameHad::update()
 {
 	m_Map = "";
-
 	
+	m_Player.MoveOnUpdate();
 
 	a = 20;
 	for (int i = 0;i<a*20;i++)
@@ -49,7 +49,7 @@ void GameHad::update()
 		
 	}
 
-	printf("%s", m_Map.c_str());
+	//printf("%s", m_Map.c_str());
 	
 }
 
@@ -128,7 +128,7 @@ void GameHad::CreateFruit()
 		m_FruitX = rand() % 19 + 1;
 		m_FruitY = rand() % 19 + 1;
 
-		FruitCount=1;
+		FruitCount = 1;
 	}
 }
 
@@ -144,3 +144,7 @@ void GameHad::FruitCollision()
 
 }
 
+const std::string& GameHad::MapString()
+{
+	return m_Map;
+}

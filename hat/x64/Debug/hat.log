@@ -1,3 +1,13 @@
-﻿  main.cpp
-C:\Users\matya\source\repos\Hat\hat\src\main.cpp(7,8): warning C4101: 'i': unreferenced local variable
+﻿  Game.cpp
+C:\Users\matya\source\repos\Hat\hat\src\Game.cpp(17,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\matya\source\repos\Hat\hat\src\Game.cpp(18,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\matya\source\repos\Hat\hat\src\Game.cpp(128,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\matya\source\repos\Hat\hat\src\Game.cpp(129,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Input.cpp
+  main.cpp
+C:\Users\matya\source\repos\Hat\hat\src\main.cpp(19,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Player.cpp
+C:\Users\matya\source\repos\Hat\hat\src\Player.cpp(112,21): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Renderer.cpp
+  Generating Code...
   hat.vcxproj -> C:\Users\matya\source\repos\Hat\x64\Debug\hat.exe

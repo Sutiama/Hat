@@ -67,8 +67,8 @@ void Player::SetPlayerX(bool Plus)
 	{
 		if (snake[0].Vec == Dir::left) return;
 		if (PlayerCollision(snake[0].x + 1, snake[0].y)) exit(1);
-		Move();
-		snake[0].x++;
+		/*Move();
+		snake[0].x++;*/
 	
 		snake[0].Vec = Dir::right;
 	}
@@ -76,8 +76,8 @@ void Player::SetPlayerX(bool Plus)
 	{
 		if (snake[0].Vec == Dir::right) return;
 		if (PlayerCollision(snake[0].x - 1, snake[0].y)) exit(1);
-		Move();
-		snake[0].x--;
+		/*Move();
+		snake[0].x--;*/
 		
 		snake[0].Vec = Dir::left;
 	}
@@ -91,8 +91,8 @@ void Player::SetPlayerY(bool Plus)
 	{
 		if (snake[0].Vec == Dir::up) return;
 		if (PlayerCollision(snake[0].x, snake[0].y + 1)) exit(1);
-		Move();
-		snake[0].y++;
+		/*Move();
+		snake[0].y++;*/
 		
 		snake[0].Vec = Dir::down;
 	}
@@ -100,8 +100,8 @@ void Player::SetPlayerY(bool Plus)
 	{
 		if (snake[0].Vec == Dir::down) return;
 		if (PlayerCollision(snake[0].x, snake[0].y - 1)) exit(1);
-		Move();
-		snake[0].y--;
+		/*Move();
+		snake[0].y--;*/
 		
 		snake[0].Vec = Dir::up;
 	}
@@ -167,4 +167,22 @@ bool Player::PlayerCollision(float x,float y)
 	return false;
 }
 
-
+void Player::MoveOnUpdate()
+{
+	Move();
+	switch (snake[0].Vec)
+	{
+	case Dir::left:
+		snake[0].x--;
+		break;
+	case Dir::right:
+		snake[0].x++;
+		break;
+	case Dir::up:
+		snake[0].y--;
+		break;
+	case Dir::down:
+		snake[0].y++;
+		break;
+	}
+}
