@@ -22,7 +22,7 @@ struct SnakePointData
 class Player
 {
 private:
-	int lenght = 2;
+	
 	//bool state;
 	//float rychlost;
 	std::vector<SnakePointData> snake;
@@ -33,7 +33,7 @@ private:
 
 public:
 	int increaseLenght();
-	
+	int lenght = 2;
 	Player();
 
 

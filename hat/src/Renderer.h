@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
-#include <glfw/glfw3.h>
+//#include <glfw3.h>
+//#include <glad.h>
 
 
 class Renderer

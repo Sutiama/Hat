@@ -19,6 +19,7 @@ void GameHad::update()
 
 		BorderCollision();
 		CreateFruit();
+		
 		FruitCollision();
 		
 
@@ -123,13 +124,18 @@ bool GameHad::Fruit(float x, float y)
 
 void GameHad::CreateFruit()
 {
+	int i = 0;
+	//do
+	//{
 	if (FruitCount == 0)
-	{
-		m_FruitX = rand() % 19 + 1;
-		m_FruitY = rand() % 19 + 1;
-
-		FruitCount = 1;
-	}
+		{
+			i++;
+			m_FruitX = rand() % 19 + 1;
+			m_FruitY = rand() % 19 + 1;
+			FruitCount = 1;
+		}
+	//} while(m_FruitX == m_Player.GetPositions()[i].first)
+	
 }
 
 

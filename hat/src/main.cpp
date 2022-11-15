@@ -7,7 +7,10 @@
 #include <crtdbg.h>  
 
 #include "Renderer.h"
+#include "Window.h"
 #include <memory> 
+
+
 
 int main()
 {
@@ -16,20 +19,29 @@ int main()
 	Input i;
 	GameHad g;
 	ConsoleRenderer Cr;
+	Window* pWindow = new Window();
+	bool running = true;
 	srand(time(NULL));
 	
-
-	while (1)
+	
+	
+	while (running)
 	{
 		system("cls");
-		
 		g.reactToKey(i.GetKey());
-		g.update();
+		//g.update();
+		if (!pWindow->ProcessMessages())
+		{
+			running = false;
+		}
 		
-		Cr.Draw2D(g.MapString());
-		Sleep(500);
+		//render
+		//Cr.Draw2D(g.MapString());
+		
+		Sleep(100);
 	}
 
+	//delete pWindow;
 
 	return 0;
 }
