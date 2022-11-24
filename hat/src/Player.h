@@ -49,6 +49,6 @@ public:
 
 	void FruitCollision();
 
-	void MoveOnUpdate();
+	void MoveOnUpdate(float deltatime);
 
 };

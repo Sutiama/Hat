@@ -5,11 +5,11 @@
 
 
 
-void GameHad::update()
+void GameHad::update(float deltatime)
 {
 	m_Map = "";
 	
-	m_Player.MoveOnUpdate();
+	m_Player.MoveOnUpdate(deltatime);
 
 	a = 20;
 	for (int i = 0;i<a*20;i++)
@@ -44,9 +44,6 @@ void GameHad::update()
 		{
 			m_Map += "\n";
 		}
-		
-		
-		
 		
 	}
 
@@ -107,9 +104,13 @@ bool GameHad::IsOnPosition()
 void GameHad::BorderCollision()
 {
 
-	if (a < m_Player.GetPositions()[0].first+2 || a < m_Player.GetPositions()[0].second+2 || 0 > m_Player.GetPositions()[0].first - 1 || 0 > m_Player.GetPositions()[0].second - 1)
+	if (a < m_Player.GetPositions()[0].first+2 || 
+		a < m_Player.GetPositions()[0].second+2 || 
+		0 > m_Player.GetPositions()[0].first - 1 || 
+		0 > m_Player.GetPositions()[0].second - 1)
 	{
-		exit(1);
+		std::cout << "Collision with border" << std::endl;
+		exit(0);
 	}
 }
 

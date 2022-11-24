@@ -167,22 +167,22 @@ bool Player::PlayerCollision(float x,float y)
 	return false;
 }
 
-void Player::MoveOnUpdate()
+void Player::MoveOnUpdate(float deltatime)
 {
 	Move();
 	switch (snake[0].Vec)
 	{
 	case Dir::left:
-		snake[0].x--;
+		snake[0].x-= 1*deltatime;
 		break;
 	case Dir::right:
-		snake[0].x++;
+		snake[0].x+= 1 * deltatime;
 		break;
 	case Dir::up:
-		snake[0].y--;
+		snake[0].y-= 1 * deltatime;
 		break;
 	case Dir::down:
-		snake[0].y++;
+		snake[0].y+= 1 * deltatime;
 		break;
 	}
 }

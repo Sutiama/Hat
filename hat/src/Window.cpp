@@ -88,3 +88,11 @@ bool Window::ProcessMessages()
 
 	return true;
 }
+
+HWND Window::GetHandle()
+{
+	return m_hWnd;
+}
+
+
+

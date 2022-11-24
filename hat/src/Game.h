@@ -19,7 +19,7 @@ private:
 	int move();
 	
 public:
-	void update();
+	void update(float deltatime);
 	void reactToKey(char key);
 	
 	
