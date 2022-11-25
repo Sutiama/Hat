@@ -1,8 +1,14 @@
 #include "OpenGLContext.h"
 
-OpenGLContext::OpenGLContext(Window* window)
+OpenGLContext::OpenGLContext() :
+	m_HDC(nullptr),
+	m_HGLRC(nullptr)
 {
-	hdc = GetDC(window->GetHandle());
+}
+
+void OpenGLContext::Create(Window* window)
+{
+	m_HDC = GetDC(window->GetHandle());
 
 	PIXELFORMATDESCRIPTOR pfd = { 0 };
 	pfd.nSize = sizeof(pfd);
@@ -14,22 +20,22 @@ OpenGLContext::OpenGLContext(Window* window)
 	pfd.cBlueBits = 8;
 	pfd.cAlphaBits = 8;
 
-	int index = ChoosePixelFormat(hdc, &pfd);
+	int index = ChoosePixelFormat(m_HDC, &pfd);
 
 	PIXELFORMATDESCRIPTOR rpfd = { 0 };
 
-	DescribePixelFormat(hdc, index, sizeof(PIXELFORMATDESCRIPTOR), &rpfd);
+	DescribePixelFormat(m_HDC, index, sizeof(PIXELFORMATDESCRIPTOR), &rpfd);
 
-	SetPixelFormat(hdc, index, &rpfd);
-	HGLRC hglrc = wglCreateContext(hdc);
+	SetPixelFormat(m_HDC, index, &rpfd);
+	m_HGLRC = wglCreateContext(m_HDC);
 }
 
 void OpenGLContext::MakeContextCurrent()
 {
-	wglMakeCurrent(hdc, hglrc);
+	wglMakeCurrent(m_HDC, m_HGLRC);
 }
 
-void OpenGLContext::Swap()
+void OpenGLContext::SwapChain()
 {
-	SwapBuffers(hdc);
+	SwapBuffers(m_HDC);
 }

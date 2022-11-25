@@ -7,10 +7,12 @@
 class OpenGLContext
 { 
 public:
-	OpenGLContext(Window* window);
+	OpenGLContext();
+	void Create(Window* window);
 	void MakeContextCurrent();
-	void Swap();
+	void SwapChain();
+
 private:
-	HDC hdc;
-	HGLRC hglrc;
+	HDC m_HDC;
+	HGLRC m_HGLRC;
 };

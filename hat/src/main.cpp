@@ -22,12 +22,39 @@ int main()
 	Input input;
 	GameHad game;
 	OpenGLRenderer renderer;
+	OpenGLContext context;
 	Window* pWindow = new Window();
 	bool running = true;
 	srand(time(NULL));
-	OpenGLContext context(pWindow);
 
+	
+	//context.Create(pWindow);
+	HDC hdc = nullptr;
+	hdc = GetDC(pWindow->GetHandle());
+
+	PIXELFORMATDESCRIPTOR pfd = { 0 };
+	pfd.nSize = sizeof(pfd);
+	pfd.nVersion = 1;
+	pfd.dwFlags = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER;
+	pfd.cColorBits = 24;
+	pfd.cRedBits = 8;
+	pfd.cGreenBits = 8;
+	pfd.cBlueBits = 8;
+	pfd.cAlphaBits = 8;
+
+	int index = ChoosePixelFormat(hdc, &pfd);
+
+	PIXELFORMATDESCRIPTOR rpfd = { 0 };
+
+	DescribePixelFormat(hdc, index, sizeof(PIXELFORMATDESCRIPTOR), &rpfd);
+
+	SetPixelFormat(hdc, index, &rpfd);
+	HGLRC hglrc = wglCreateContext(hdc);
+
+	
+	context.Create(pWindow);
 	context.MakeContextCurrent();
+
 
 	while (running)
 	{
@@ -47,16 +74,12 @@ int main()
 
 		//renderer.draw2D(game.MapString(),game.width,game.height);
 		glBegin(GL_TRIANGLES);
-		glColor3f(1.0f, 0.5f, 0.5f);
 		glVertex2f(-0.5f, -0.5f);
-		glColor3f(0.9f, 0.1f, 0.9f);
 		glVertex2f(0.0f, 0.5f);
-		glColor3f(0.1f, 0.3f, 0.6f);
 		glVertex2f(0.5f, -0.5f);
 		glEnd();
 		
-		context.Swap();
-		Sleep(100);
+		context.SwapChain();
 	}
 
 	delete pWindow;
